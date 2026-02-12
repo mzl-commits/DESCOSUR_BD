@@ -36,36 +36,44 @@
             <span class="{{ request()->routeIs('admin.dashboard') ? 'font-semibold' : 'font-medium' }}">Panel</span>
         </a>
 
-        <a class="{{ $navClass(request()->is('admin/documentos*')) }}" href="{{ url('/admin/documentos') }}">
+        <a class="{{ $navClass(request()->routeIs('admin.documentos.*')) }}" href="{{ route('admin.documentos.index') }}">
             <span class="{{ $iconClass() }}">folder_open</span>
-            <span class="{{ request()->is('admin/documentos*') ? 'font-semibold' : 'font-medium' }}">Documentos</span>
+            <span class="{{ request()->routeIs('admin.documentos.*') ? 'font-semibold' : 'font-medium' }}">Documentos</span>
         </a>
 
-        <a class="{{ $navClass(request()->is('admin/proyectos*')) }}" href="{{ url('/admin/proyectos') }}">
+        <a class="{{ $navClass(request()->routeIs('admin.proyectos.*')) }}" href="{{ route('admin.proyectos.index') }}">
             <span class="{{ $iconClass() }}">assignment</span>
-            <span class="{{ request()->is('admin/proyectos*') ? 'font-semibold' : 'font-medium' }}">Proyectos</span>
+            <span class="{{ request()->routeIs('admin.proyectos.*') ? 'font-semibold' : 'font-medium' }}">Proyectos</span>
         </a>
 
-        <a class="{{ $navClass(request()->is('admin/sectores*')) }}" href="{{ url('/admin/sectores') }}">
+        <a class="{{ $navClass(request()->routeIs('admin.sectores.*')) }}" href="{{ route('admin.sectores.index') }}">
             <span class="{{ $iconClass() }}">category</span>
-            <span class="{{ request()->is('admin/sectores*') ? 'font-semibold' : 'font-medium' }}">Sectores</span>
+            <span class="{{ request()->routeIs('admin.sectores.*') ? 'font-semibold' : 'font-medium' }}">Sectores</span>
         </a>
 
-        <a class="{{ $navClass(request()->is('admin/ubigeo*')) }}" href="{{ url('/admin/ubigeo') }}">
+        <a class="{{ $navClass(request()->routeIs('admin.ubigeo.*')) }}" href="{{ route('admin.ubigeo.index') }}">
             <span class="{{ $iconClass() }}">map</span>
-            <span class="{{ request()->is('admin/ubigeo*') ? 'font-semibold' : 'font-medium' }}">UBIGEO / Distritos</span>
+            <span class="{{ request()->routeIs('admin.ubigeo.*') ? 'font-semibold' : 'font-medium' }}">UBIGEO / Distritos</span>
         </a>
 
         <p class="px-4 text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 mt-8">Sistema</p>
 
-        <a class="{{ $navClass(request()->is('admin/usuarios*')) }}" href="{{ url('/admin/usuarios') }}">
+        {{-- ✅ CORREGIDO: admin.users.* (ya no admin.usuarios.*) --}}
+        <a class="{{ $navClass(request()->routeIs('admin.users.*')) }}" href="{{ route('admin.users.index') }}">
             <span class="{{ $iconClass() }}">people</span>
-            <span class="{{ request()->is('admin/usuarios*') ? 'font-semibold' : 'font-medium' }}">Usuarios</span>
+            <span class="{{ request()->routeIs('admin.users.*') ? 'font-semibold' : 'font-medium' }}">Usuarios</span>
         </a>
 
-        <a class="{{ $navClass(request()->is('admin/settings*')) }}" href="{{ url('/admin/settings') }}">
-            <span class="{{ $iconClass() }}">settings</span>
-            <span class="{{ request()->is('admin/settings*') ? 'font-semibold' : 'font-medium' }}">Configuración</span>
+        {{-- ✅ CORREGIDO: tu ruta real es /admin/clasificaciones => admin.classifications.index --}}
+        <a class="{{ $navClass(request()->routeIs('admin.classifications.*')) }}" href="{{ route('admin.classifications.index') }}">
+            <span class="{{ $iconClass() }}">sell</span>
+            <span class="{{ request()->routeIs('admin.classifications.*') ? 'font-semibold' : 'font-medium' }}">Clasificaciones</span>
+        </a>
+
+        {{-- (Opcional pero ya tienes la vista hecha) --}}
+        <a class="{{ $navClass(request()->routeIs('admin.audit.*')) }}" href="{{ route('admin.audit.index') }}">
+            <span class="{{ $iconClass() }}">security</span>
+            <span class="{{ request()->routeIs('admin.audit.*') ? 'font-semibold' : 'font-medium' }}">Auditoría</span>
         </a>
     </nav>
 

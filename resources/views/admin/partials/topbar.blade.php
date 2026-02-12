@@ -33,7 +33,6 @@
             <span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full border-2 border-white dark:border-neutral-surface-dark"></span>
         </button>
 
-        {{-- Dropdown usuario --}}
         <div class="relative">
             <button id="userMenuBtn" type="button"
                     class="flex items-center gap-2 pl-2 pr-3 py-2 rounded-xl hover:bg-slate-50 dark:hover:bg-red-900/10 transition-colors">
