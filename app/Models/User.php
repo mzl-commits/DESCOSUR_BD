@@ -21,9 +21,6 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'rol',
-        'estado',
-
     ];
 
     /**
@@ -48,10 +45,4 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-
-    public function hasRole($roles)
-    {
-        return in_array($this->rol, (array) $roles);
-    }
-
 }

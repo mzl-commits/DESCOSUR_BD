@@ -1,4 +1,4 @@
-@extends('layouts.usuario')
+@extends('layouts.admin')
 
 @section('title', 'Sectores - DESCOSUR')
 
